@@ -1,0 +1,8 @@
+<!-- _form.html.erb -->
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name, input_html: { placeholder: "The blue lagoon" } %>
+  <%= f.input :category, as: :select, collection: Restaurant::CATEGORIES, include_blank:  "Select a category" %>
+  <%= f.input :address %>
+  <%= f.input :phone_number, as: :string %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

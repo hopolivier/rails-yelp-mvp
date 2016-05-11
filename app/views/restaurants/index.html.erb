@@ -1,0 +1,28 @@
+<!-- restaurants/index.html.erb -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Restaurants</h1>
+      <%= link_to "Add a new restaurant", new_restaurant_path %>
+    </div>
+  </div>
+  <% @restaurants.each do |restaurant| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <h3>
+          <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        </h3>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p>
+          <%= restaurant.category %>
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p>
+          <%= restaurant.phone_number %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

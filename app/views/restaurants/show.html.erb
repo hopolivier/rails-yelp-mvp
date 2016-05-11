@@ -1,0 +1,29 @@
+<!-- show.html.erb -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><%= @restaurant.name %></h1>
+      <p>
+        <%= @restaurant.category %>
+      </p>
+      <p>
+        <%= @restaurant.address %>
+      </p>
+      <p>
+        <%= @restaurant.phone_number %>
+      </p>
+      <div>
+        <% @restaurant.reviews.each do |r| %>
+          <p>
+            <%= r.content %>
+          </p>
+          <p>
+            <%= r.rating %>
+          </p>
+        <% end %>
+      </div>
+      <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+      <%= link_to "Back", restaurants_path %>
+    </div>
+  </div>
+</div>
